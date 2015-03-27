@@ -37,6 +37,16 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <jsp-config>
+        <taglib>
+            <taglib-uri>
+                /WEB-INF/tlds/web
+            </taglib-uri>
+            <taglib-location>
+                /WEB-INF/tlds/web.tld
+            </taglib-location>
+        </taglib> 
+    </jsp-config>
 
     <session-config>
         <session-timeout>
