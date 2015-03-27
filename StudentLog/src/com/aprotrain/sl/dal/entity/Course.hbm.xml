@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 27, 2015 2:04:41 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aprotrain.sl.dal.entity.Course" table="Course" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
+        <id name="courseId" type="int">
+            <column name="CourseId" />
+            <generator class="assigned" />
+        </id>
+        <property name="courseCode" type="serializable">
+            <column name="CourseCode" not-null="true" />
+        </property>
+        <property name="year" type="java.lang.Integer">
+            <column name="Year" />
+        </property>
+        <property name="remarks" type="serializable">
+            <column name="Remarks" />
+        </property>
+        <set name="clazzs" table="Clazz" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CourseId" />
+            </key>
+            <one-to-many class="com.aprotrain.sl.dal.entity.Clazz" />
+        </set>
+        <set name="subjects" table="Subject" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CourseId" />
+            </key>
+            <one-to-many class="com.aprotrain.sl.dal.entity.Subject" />
+        </set>
+    </class>
+</hibernate-mapping>
