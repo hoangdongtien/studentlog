@@ -1,5 +1,5 @@
 <%@ taglib uri="/WEB-INF/tlds/web.tld" prefix="w" %>
-
+<%@ taglib uri="/struts-tags" prefix="s" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,13 +14,14 @@
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="${w:baseurl(pageContext.request, "/assets/bootstrap/css/bootstrap.min.css")}" rel="stylesheet">
+    <link href="<s:url value="/assets/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
+
 
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="<s:url value="/assets/css/aae.css" />" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="<s:url value="/assets/js/ie8-responsive-file-warning.js" />"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -87,6 +88,7 @@
               <img data-src="holder.js/200x200/auto/sky" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Label</h4>
               <span class="text-muted">Something else</span>
+              <a href="">Test</a>
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <img data-src="holder.js/200x200/auto/vine" class="img-responsive" alt="Generic placeholder thumbnail">
@@ -105,7 +107,7 @@
             </div>
           </div>
 
-          <h2 class="sub-header">Section title</h2>
+          <h2 class="sub-header"> </h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

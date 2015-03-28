@@ -13,14 +13,12 @@
       <put-attribute name="footer"   value="/test/footer.jsp"/>
    </definition>
 
-   <definition name="page1" extends="testLayout">
-      <put-attribute name="title"  value="Page 1 Layout"/>
-      <put-attribute name="body"   value="/page1.jsp"/>
+   <definition name="baseDashboardLayout" template="/base.jsp">
+      <put-attribute name="title"  value="Dashboard"/>
    </definition>
 
-   <definition name="page2" extends="testLayout">
-      <put-attribute name="title"  value="Page 2 Layout"/>
-      <put-attribute name="body"   value="/page2.jsp"/>
+   <definition name="aaeLayout" extends="baseDashboardLayout">
+      <put-attribute name="title"  value="Academic Administration Executive"/>
    </definition>
 
 </tiles-definitions>

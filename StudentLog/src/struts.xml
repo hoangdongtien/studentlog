@@ -1,16 +1,23 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-   <package name="default" extends="struts-default">
-      <result-types>
-         <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
-      </result-types>
+    <package name="default" extends="struts-default">
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+    </package>
 
-      <action name="UserAction" method="doTest" class="test.struts.UserAction">
-         <result name="page1" type="tiles">page1</result>
-         <result name="page2" type="tiles">page2</result>
-      </action>
+    <package name="student" extends="default">
+        <action name="UserAction" method="doTest" class="test.struts.UserAction">
+            <result name="page1" type="tiles">page1</result>
+            <result name="page2" type="tiles">page2</result>
+        </action>
+    </package>
 
-
-   </package>
+    <package name="aae" extends="default">
+        <action name="UserAction" method="doTest" class="test.struts.UserAction">
+            <result name="page1" type="tiles">aaeLayout</result>
+            <result name="page2" type="tiles">aaeLayout</result>
+        </action>
+    </package>
 </struts>
