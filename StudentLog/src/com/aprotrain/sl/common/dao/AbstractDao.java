@@ -3,23 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.aprotrain.sl.dal;
+package com.aprotrain.sl.common.dao;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 /**
- * Hibernate Utility class with a convenient method to get Session Factory
- * object.
  *
- * @author admin
+ * @author Tien Hoang D
  */
-public class HibernateUtil {
-
+public abstract class AbstractDao<T> implements BaseDao<T>{
     private static final SessionFactory sessionFactory;
-
+    private  Session session;
+    
     static {
         try {
             // Create the SessionFactory from standard (hibernate.cfg.xml)
@@ -40,4 +39,28 @@ public class HibernateUtil {
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
+    
+    public static void closeSessionFactory(){
+        if (sessionFactory != null && !sessionFactory.isClosed()){
+            sessionFactory.close();
+        }
+    }
+    
+    // Common Methods
+    public Session getSession() {
+        if (session == null || !session.isOpen()) {
+            session = openSession();
+        }
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
+    
+    public Session openSession() {
+        return sessionFactory.openSession();
+    }
+    
+    
 }
