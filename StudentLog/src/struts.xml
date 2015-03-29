@@ -14,10 +14,9 @@
         </action>
     </package>
 
-    <package name="aae" extends="default">
-        <action name="UserAction" method="doTest" class="test.struts.UserAction">
-            <result name="page1" type="tiles">aaeLayout</result>
-            <result name="page2" type="tiles">aaeLayout</result>
+    <package name="employee" extends="default">
+        <action name="LoginAction" method="execute" class="com.aprotrain.sl.web.LoginAction">
+            <result name="login" type="tiles">login</result>
         </action>
     </package>
 </struts>
