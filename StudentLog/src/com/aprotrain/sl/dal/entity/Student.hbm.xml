@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 27, 2015 2:04:41 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aprotrain.sl.dal.entity.Student" table="Student" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
+        <id name="studentId" type="int">
+            <column name="StudentId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="clazzByCurrentClass" class="com.aprotrain.sl.dal.entity.Clazz" fetch="select">
+            <column name="CurrentClass" />
+        </many-to-one>
+        <many-to-one name="clazzByInitClass" class="com.aprotrain.sl.dal.entity.Clazz" fetch="select">
+            <column name="InitClass" />
+        </many-to-one>
+        <property name="rollnumber" type="string">
+            <column name="Rollnumber" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

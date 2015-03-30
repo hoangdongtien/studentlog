@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+   <definition name="baseDashboardLayout" template="/employee/base.jsp">
+       <put-attribute name="head-common"  value="/employee/head-common.jsp"/>
+       <put-attribute name="head-title"  value="Dashboard"/>
+   </definition>
+
+   <definition name="aaeLayout" extends="baseDashboardLayout">
+      <put-attribute name="title"  value="Academic Administration Executive"/>
+   </definition>
+   
+   <definition name="login" template="/employee/login.jsp">
+       <put-attribute name="head-common"  value="/employee/head-common.jsp"/>
+       <put-attribute name="head-title"  value="Login"/>
+   </definition>
+
+</tiles-definitions>

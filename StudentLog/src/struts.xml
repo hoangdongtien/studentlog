@@ -1,0 +1,22 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="default" extends="struts-default">
+        <result-types>
+            <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+        </result-types>
+    </package>
+
+    <package name="student" extends="default">
+        <action name="UserAction" method="doTest" class="test.struts.UserAction">
+            <result name="page1" type="tiles">page1</result>
+            <result name="page2" type="tiles">page2</result>
+        </action>
+    </package>
+
+    <package name="employee" extends="default">
+        <action name="LoginAction" method="execute" class="com.aprotrain.sl.web.LoginAction">
+            <result name="login" type="tiles">login</result>
+        </action>
+    </package>
+</struts>
