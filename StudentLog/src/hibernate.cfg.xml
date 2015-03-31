@@ -7,11 +7,5 @@
     <property name="hibernate.connection.username">student</property>
     <property name="hibernate.connection.password">student@123</property>
     <mapping resource="com/aprotrain/sl/dal/entity/Employee.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Course.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Faculty.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Batch.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Student.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Clazz.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Subject.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

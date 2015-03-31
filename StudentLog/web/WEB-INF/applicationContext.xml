@@ -2,8 +2,11 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
 "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
-    <bean id="userBean" class="test.User">
-        <property name="firstName" value="Michael" />
-        <property name="lastName" value="Jackson" />
+    <!-- Service Bean configuration -->
+    <bean id="employeeService" class="com.aprotrain.sl.dal.dao.EmployeeService"></bean>
+
+    <!-- Struts Action Bean configuration -->
+    <bean id="loginAction" class="com.aprotrain.sl.web.employee.LoginAction">
+        <property name="empServ" ref="employeeService" />
     </bean>
 </beans>

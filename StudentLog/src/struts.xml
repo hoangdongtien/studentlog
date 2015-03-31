@@ -1,6 +1,8 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+    <constant name="struts.devMode" value="true" />
+
     <package name="default" extends="struts-default">
         <result-types>
             <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
@@ -15,8 +17,13 @@
     </package>
 
     <package name="employee" extends="default">
-        <action name="LoginAction" method="execute" class="com.aprotrain.sl.web.LoginAction">
+        <action name="login" method="execute" class="com.aprotrain.sl.web.employee.LoginAction">
             <result name="login" type="tiles">login</result>
+        </action>
+
+        <action name="loginCheck" method="check" class="loginAction">
+            <result name="error" type="tiles">login</result>
+            <result name="success" type="tiles">aaeLayout</result>
         </action>
     </package>
 </struts>
