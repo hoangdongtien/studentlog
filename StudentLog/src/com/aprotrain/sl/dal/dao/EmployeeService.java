@@ -58,6 +58,9 @@ public class EmployeeService extends AbstractDao<Employee> {
         if (!list.isEmpty()) {
             e = list.get(0);
         }
+
+        session.close();
+
         return e;
     }
 
