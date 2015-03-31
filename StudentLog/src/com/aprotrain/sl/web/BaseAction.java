@@ -7,16 +7,8 @@ package com.aprotrain.sl.web;
 
 /**
  *
- * @author Tien Hoang D
+ * @author admin
  */
-public class LoginAction<T> extends AbstractAction<T> {
-    public String execute(){
-        return "login";
-    }
-
-    public String doLogin(){
-        return "login";
-    }
-
+public interface BaseAction<T> {
 
 }
