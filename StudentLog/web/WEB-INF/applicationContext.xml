@@ -7,6 +7,6 @@
 
     <!-- Struts Action Bean configuration -->
     <bean id="loginAction" class="com.aprotrain.sl.web.employee.LoginAction">
-        <property name="empServ" ref="employeeService" />
+        <property name="employeeService" ref="employeeService" />
     </bean>
 </beans>

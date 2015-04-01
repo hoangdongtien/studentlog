@@ -13,43 +13,42 @@ import com.aprotrain.sl.dal.entity.Employee;
  *
  * @author Tien Hoang D
  */
-public class LoginAction extends AbstractAction<Employee> {
-    private Employee model;
-    private EmployeeService empServ;
+public class LoginAction extends AbstractAction {
+    private Employee employee;
+    private EmployeeService employeeService;
 
     public LoginAction() {
-        model = new Employee();
+    }
+
+    public EmployeeService getEmployeeService() {
+        return employeeService;
+    }
+
+    public void setEmployeeService(EmployeeService service) {
+        this.employeeService = service;
+    }
+
+    public Employee getEmployee() {
+        return this.employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
     }
 
 
-
-    public EmployeeService getEmpServ() {
-        return empServ;
-    }
-
-    public void setEmpServ(EmployeeService service) {
-        this.empServ = service;
-    }
-
-
+    // action methods
     @Override
     public String execute(){
         return "login";
     }
 
     public String check(){
-        Employee  e =  this.getEmpServ().checkLogin(model.getInternalEmail(), model.getPassword());
+        Employee  e =  this.getEmployeeService().checkLogin(employee.getInternalEmail(), employee.getPassword());
         if (e != null) {
             return SUCCESS;
         } else {
             return ERROR;
         }
     }
-
-    @Override
-    public Employee getModel() {
-        return this.model;
-    }
-
-
 }

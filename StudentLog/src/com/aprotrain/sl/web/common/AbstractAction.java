@@ -12,6 +12,6 @@ import com.opensymphony.xwork2.ModelDriven;
  *
  * @author admin
  */
-public abstract class AbstractAction<T>  extends ActionSupport implements BaseAction<T>, ModelDriven<T>{
+public abstract class AbstractAction  extends ActionSupport implements BaseAction{
 
 }
