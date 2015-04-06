@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.aprotrain.sl.common;
+package com.aprotrain.sl.common.constants;
 
 /**
  *
  * @author Tien Hoang D
  */
-public interface Constants {
+public interface Base {
     
 }
