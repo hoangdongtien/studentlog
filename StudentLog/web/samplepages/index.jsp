@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib  prefix="s" uri="/struts-tags" %>
+<%@taglib  prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,22 +15,22 @@
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<s:url value="/statics/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../static/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="<s:url value="/statics/metisMenu/dist/metisMenu.min.css" />" rel="stylesheet">
 
     <!-- Timeline CSS -->
-    <link href="../static/sbadmin/css/timeline.css" rel="stylesheet">
+    <link href="<s:url value="/statics/sbadmin/css/timeline.css" />" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../static/sbadmin/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<s:url value="/statics/sbadmin/css/sb-admin-2.css" />" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="../static/morrisjs/morris.css" rel="stylesheet">
+    <link href="<s:url value="/statics/morrisjs/morris.css" />" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../static/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<s:url value="/statics/font-awesome/css/font-awesome.min.css" />" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -920,21 +923,21 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../static/jquery/dist/jquery.min.js"></script>
+    <script src="<s:url value="/statics/jquery/dist/jquery.min.js" />"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<s:url value="/statics/bootstrap/js/bootstrap.min.js" />"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../static/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="<s:url value="/statics/metisMenu/dist/metisMenu.min.js" />"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="../static/raphael/raphael-min.js"></script>
-    <script src="../static/morrisjs/morris.min.js"></script>
-    <script src="jsdata/morris-data.js"></script>
+    <script src="<s:url value="/statics/raphael/raphael-min.js" />"></script>
+    <script src="<s:url value="/statics/morrisjs/morris.min.js" />"></script>
+    <script src="<s:url value="/statics/sbadmin/jsdata/morris-data.js" />"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../static/sbadmin/js/sb-admin-2.js"></script>
+    <script src="<s:url value="/statics/sbadmin/js/sb-admin-2.js" />"></script>
 
 </body>
 

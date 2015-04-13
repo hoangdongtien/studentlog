@@ -17,6 +17,10 @@
     </package>
 
     <package name="employee" extends="default">
+         <action name="testLayout" method="testLayout" class="com.aprotrain.sl.web.employee.LoginAction">
+            <result name="success" type="tiles">baseDashboardLayout</result>
+        </action>
+        
         <action name="login" method="execute" class="com.aprotrain.sl.web.employee.LoginAction">
             <result name="login" type="tiles">login</result>
         </action>

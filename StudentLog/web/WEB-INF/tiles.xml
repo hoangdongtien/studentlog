@@ -11,12 +11,12 @@
    </definition>
 
    <definition name="aaeLayout" extends="baseDashboardLayout">
-      <put-attribute name="title"  value="Academic Administration Executive"/>
+      <put-attribute name="head-title"  value="Academic Administration Executive"/>  
    </definition>
    
    <definition name="login" template="/employee/login.jsp">
        <put-attribute name="head-common"  value="/employee/head-common.jsp"/>
-       <put-attribute name="head-title"  value="Login"/>
+       <put-attribute name="head-title"  value="LoginABC"/>
    </definition>
 
 </tiles-definitions>

@@ -9,7 +9,7 @@
         <title>
             <tiles:insertAttribute name="head-title" />
         </title>
-        <link href="<s:url value="/assets/css/login.css" />" rel="stylesheet">
+        <link href="<s:url value="/statics/css/login.css" />" rel="stylesheet">
 
     </head>
 

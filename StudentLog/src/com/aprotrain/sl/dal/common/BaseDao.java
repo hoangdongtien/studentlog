@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface BaseDao<T> {
     List<T> listAll();
-    T add();
+    T add(T a);
     T update(T a);
     T delete(T a);
     T saveOrUpdate(T a);

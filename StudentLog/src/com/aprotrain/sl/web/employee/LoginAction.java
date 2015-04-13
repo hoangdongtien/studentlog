@@ -44,11 +44,16 @@ public class LoginAction extends AbstractAction {
     }
 
     public String check(){
-        Employee  e =  this.getEmployeeService().checkLogin(employee.getInternalEmail(), employee.getPassword());
+        Employee  e =  new Employee();
+                //this.getEmployeeService().checkLogin(employee.getInternalEmail(), employee.getPassword());
         if (e != null) {
             return SUCCESS;
         } else {
             return ERROR;
         }
+    }
+    
+    public String testLayout(){
+        return "success";
     }
 }

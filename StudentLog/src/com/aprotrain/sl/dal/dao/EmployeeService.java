@@ -26,7 +26,7 @@ public class EmployeeService extends AbstractDao<Employee> {
     }
 
     @Override
-    public Employee add() {
+    public Employee add(Employee e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
