@@ -3,9 +3,9 @@
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-    <property name="hibernate.connection.url">jdbc:sqlserver://localhost:49174;databaseName=StudentLog_dev</property>
-    <property name="hibernate.connection.username">sa</property>
-    <property name="hibernate.connection.password">1234567</property>
+    <property name="hibernate.connection.url">jdbc:sqlserver://server01:3480;databaseName=StudentLog_dev</property>
+    <property name="hibernate.connection.username">studentlog</property>
+    <property name="hibernate.connection.password">studentlog@123</property>
     <mapping resource="com/aprotrain/sl/dal/entity/Employee.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
