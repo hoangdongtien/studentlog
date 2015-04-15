@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <hibernate-reverse-engineering>
-  <schema-selection match-catalog="StudentLog_dev" match-schema="dbo"/>
+  <schema-selection match-catalog="StudentLog_dev"/>
+  <table-filter match-name="BatchSession"/>
+  <table-filter match-name="Exam"/>
+  <table-filter match-name="Batch"/>
+  <table-filter match-name="Location"/>
   <table-filter match-name="Employee"/>
+  <table-filter match-name="ClassOpenHouse"/>
+  <table-filter match-name="ExamAttendance"/>
+  <table-filter match-name="BatchAttendance"/>
+  <table-filter match-name="ClassUnit"/>
+  <table-filter match-name="StudentUpgradeHistory"/>
+  <table-filter match-name="StudentTransferHistory"/>
+  <table-filter match-name="BatchStudentList"/>
+  <table-filter match-name="Course"/>
+  <table-filter match-name="Subject"/>
+  <table-filter match-name="FacultyDetails"/>
+  <table-filter match-name="Student"/>
+  <table-filter match-name="Room"/>
 </hibernate-reverse-engineering>

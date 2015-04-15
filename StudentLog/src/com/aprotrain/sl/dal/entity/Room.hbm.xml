@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 15, 2015 8:50:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aprotrain.sl.dal.entity.Room" table="Room" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
+        <id name="roomId" type="byte">
+            <column name="RoomId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="location" class="com.aprotrain.sl.dal.entity.Location" fetch="select">
+            <column name="LocationId" />
+        </many-to-one>
+        <property name="roomName" type="serializable">
+            <column name="RoomName" />
+        </property>
+        <property name="remarks" type="serializable">
+            <column name="Remarks" />
+        </property>
+        <property name="roomType" type="java.lang.Byte">
+            <column name="RoomType" />
+        </property>
+    </class>
+</hibernate-mapping>

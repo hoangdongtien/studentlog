@@ -7,6 +7,7 @@ package com.aprotrain.sl.dal.dao;
 
 import com.aprotrain.sl.dal.common.AbstractDao;
 import com.aprotrain.sl.dal.entity.Employee;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -21,8 +22,13 @@ public class EmployeeService extends AbstractDao<Employee> {
     }
 
     @Override
-    public List<Employee> listAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Employee> listAll() {      
+        Session session=this.getSession();
+        
+        Query query=session.createQuery("From Employee");
+        List<Employee> listEmp=query.list();
+      
+        return listEmp;
     }
 
     @Override

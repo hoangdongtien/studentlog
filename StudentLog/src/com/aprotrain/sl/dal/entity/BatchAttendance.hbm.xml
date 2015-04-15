@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 15, 2015 8:50:40 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aprotrain.sl.dal.entity.BatchAttendance" table="BatchAttendance" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
+        <composite-id name="id" class="com.aprotrain.sl.dal.entity.BatchAttendanceId">
+            <key-property name="batchId" type="long">
+                <column name="BatchId" />
+            </key-property>
+            <key-property name="sessionDate" type="serializable">
+                <column name="SessionDate" />
+            </key-property>
+            <key-property name="studentId" type="long">
+                <column name="StudentId" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="batchSession" class="com.aprotrain.sl.dal.entity.BatchSession" update="false" insert="false" fetch="select">
+            <column name="BatchId" not-null="true" />
+            <column name="SessionDate" not-null="true" />
+        </many-to-one>
+        <many-to-one name="batchStudentList" class="com.aprotrain.sl.dal.entity.BatchStudentList" update="false" insert="false" fetch="select">
+            <column name="BatchId" not-null="true" />
+            <column name="StudentId" not-null="true" />
+        </many-to-one>
+        <property name="attendanceType" type="java.lang.Byte">
+            <column name="AttendanceType" />
+        </property>
+        <property name="remarks" type="serializable">
+            <column name="Remarks" />
+        </property>
+    </class>
+</hibernate-mapping>
