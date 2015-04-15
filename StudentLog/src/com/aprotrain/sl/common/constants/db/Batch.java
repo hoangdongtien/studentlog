@@ -10,10 +10,10 @@ package com.aprotrain.sl.common.constants.db;
  * @author admin
  */
 public interface Batch extends Constants {
-    public static final String PRESENT_P = "P";
-    public static final String PRESENT_PA = "PA";
-    public static final String PRESENT_A = "A";
+    public static final String PRESENT_P        = "P";
+    public static final String PRESENT_PA       = "PA";
+    public static final String PRESENT_A        = "A";
 
-    public static final String SESSION_THEORY ="T";
-    public static final String SESSION_PRACTICAL ="P";
+    public static final String SESSION_THEORY    = "T";
+    public static final String SESSION_PRACTICAL = "P";
 }
