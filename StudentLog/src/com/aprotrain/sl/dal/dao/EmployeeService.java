@@ -6,11 +6,7 @@
 package com.aprotrain.sl.dal.dao;
 
 import com.aprotrain.sl.dal.common.AbstractDao;
-import com.aprotrain.sl.dal.entity.Course;
 import com.aprotrain.sl.dal.entity.Employee;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -36,84 +32,7 @@ public class EmployeeService extends AbstractDao<Employee> {
         session.close();
         return listEmp;
     }
-
-    @Override
-    public Employee add(Employee e) {
-        Transaction tran = null;
-        Session session = this.getSession();
-
-        try {
-            tran = session.beginTransaction();
-            session.save(e);
-            tran.commit();
-
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            tran.rollback();
-        }
-
-        session.close();
-        return e;
-    }
-
-    @Override
-    public Employee update(Employee emp) {
-        Transaction tran = null;
-        Session session = this.getSession();
-
-        try {
-            tran = session.beginTransaction();
-            session.update(String.valueOf(emp.getEmployeeId()), emp);
-            tran.commit();
-
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            tran.rollback();
-        }
-
-        session.close();
-        return emp;
-    }
-
-    @Override
-    public Employee delete(Employee emp) {
-        Transaction tran = null;
-        Session session = this.getSession();
-
-        try {
-            tran = session.beginTransaction();
-            session.delete(emp);
-
-            tran.commit();
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            tran.rollback();
-        }
-
-        session.close();
-        return emp;
-    }
-
-    //saveOrUpdate ko chay dc khi id la new ko tao moi dc @@ vi khi la id new no nhan luong ID nen chet cot tu tang identity
-    @Override
-    public Employee saveOrUpdate(Employee emp) {
-        Transaction tran = null;
-        Session session = this.getSession();
-
-        try {
-            tran = session.beginTransaction();
-            session.saveOrUpdate(emp);
-            tran.commit();
-
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            tran.rollback();
-        }
-
-        session.close();
-        return emp;
-    }
-
+  
     public Employee checkLogin(String internalEmail, String password) {
         Session session = this.getSession();
 
@@ -145,9 +64,4 @@ public class EmployeeService extends AbstractDao<Employee> {
         return list;
     }
 
-    public static void main(String[] args) {
-        EmployeeService obj = new EmployeeService();
-        List<Employee> listC = obj.search("v");
-        System.out.println(listC.size());
-    }
 }

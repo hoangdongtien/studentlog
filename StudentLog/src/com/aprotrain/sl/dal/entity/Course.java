@@ -1,5 +1,5 @@
 package com.aprotrain.sl.dal.entity;
-// Generated Apr 15, 2015 8:50:37 PM by Hibernate Tools 4.3.1
+// Generated Apr 17, 2015 12:45:39 AM by Hibernate Tools 4.3.1
 
 
 import java.io.Serializable;
@@ -13,29 +13,29 @@ public class Course  implements java.io.Serializable {
 
 
      private long courseId;
-     private String courseCode;
+     private Serializable courseCode;
      private Integer year;
-     private String remarks;
+     private Serializable remarks;
      private Byte status;
-     private Set subjects = new HashSet(0);
      private Set students = new HashSet(0);
+     private Set subjects = new HashSet(0);
 
     public Course() {
     }
 
 	
-    public Course(long courseId, String courseCode) {
+    public Course(long courseId, Serializable courseCode) {
         this.courseId = courseId;
         this.courseCode = courseCode;
     }
-    public Course(long courseId, String courseCode, Integer year, String remarks, Byte status, Set subjects, Set students) {
+    public Course(long courseId, Serializable courseCode, Integer year, Serializable remarks, Byte status, Set students, Set subjects) {
        this.courseId = courseId;
        this.courseCode = courseCode;
        this.year = year;
        this.remarks = remarks;
        this.status = status;
-       this.subjects = subjects;
        this.students = students;
+       this.subjects = subjects;
     }
    
     public long getCourseId() {
@@ -45,11 +45,11 @@ public class Course  implements java.io.Serializable {
     public void setCourseId(long courseId) {
         this.courseId = courseId;
     }
-    public String getCourseCode() {
+    public Serializable getCourseCode() {
         return this.courseCode;
     }
     
-    public void setCourseCode(String courseCode) {
+    public void setCourseCode(Serializable courseCode) {
         this.courseCode = courseCode;
     }
     public Integer getYear() {
@@ -59,11 +59,11 @@ public class Course  implements java.io.Serializable {
     public void setYear(Integer year) {
         this.year = year;
     }
-    public String getRemarks() {
+    public Serializable getRemarks() {
         return this.remarks;
     }
     
-    public void setRemarks(String remarks) {
+    public void setRemarks(Serializable remarks) {
         this.remarks = remarks;
     }
     public Byte getStatus() {
@@ -73,19 +73,19 @@ public class Course  implements java.io.Serializable {
     public void setStatus(Byte status) {
         this.status = status;
     }
-    public Set getSubjects() {
-        return this.subjects;
-    }
-    
-    public void setSubjects(Set subjects) {
-        this.subjects = subjects;
-    }
     public Set getStudents() {
         return this.students;
     }
     
     public void setStudents(Set students) {
         this.students = students;
+    }
+    public Set getSubjects() {
+        return this.subjects;
+    }
+    
+    public void setSubjects(Set subjects) {
+        this.subjects = subjects;
     }
 
 

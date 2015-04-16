@@ -7,7 +7,6 @@ package com.aprotrain.sl.dal.dao;
 
 import com.aprotrain.sl.dal.common.AbstractDao;
 import com.aprotrain.sl.dal.entity.Course;
-import com.aprotrain.sl.dal.entity.Employee;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -30,81 +29,7 @@ public class CourseService extends AbstractDao<Course> {
         return listCourse;
     }
 
-    @Override
-    public Course add(Course a) {
-        Transaction tran = null;
-        Session session = this.getSession();
-
-        try {
-            tran = session.beginTransaction();
-            session.save(a);
-            tran.commit();
-
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            tran.rollback();
-        }
-        session.close();
-        return a;
-    }
-
-    @Override
-    public Course update(Course cou) {
-        Transaction tran = null;
-        Session session = this.getSession();
-
-        try {
-            tran = session.beginTransaction();
-            session.update(String.valueOf(cou.getCourseId()), cou);
-            tran.commit();
-
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            tran.rollback();
-        }
-
-        session.close();
-        return cou;
-    }
-
-    @Override
-    public Course delete(Course cou) {
-        Transaction tran = null;
-        Session session = this.getSession();
-
-        try {
-            tran = session.beginTransaction();
-            session.delete(cou);
-
-            tran.commit();
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            tran.rollback();
-        }
-
-        session.close();
-        return cou;
-    }
-
-    @Override
-    public Course saveOrUpdate(Course cou) {
-        Transaction tran = null;
-        Session session = this.getSession();
-
-        try {
-            tran = session.beginTransaction();
-            session.saveOrUpdate(cou);
-            tran.commit();
-
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            tran.rollback();
-        }
-
-        session.close();
-        return cou;
-    }
-
+   
     public List<Course> search(String CourseCode) {
         Session session = this.getSession();
 
@@ -115,11 +40,5 @@ public class CourseService extends AbstractDao<Course> {
         session.close();
 
         return list;
-    }
-
-    public static void main(String[] args) {
-        CourseService obj = new CourseService();
-        List<Course> listC = obj.search("0");
-        System.out.println(listC.size());
     }
 }

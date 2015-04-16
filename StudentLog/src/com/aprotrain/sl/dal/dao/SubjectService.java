@@ -27,38 +27,5 @@ public class SubjectService extends AbstractDao<Subject> {
         session.close();
 
         return listSub;
-    }
-
-
-    @Override
-    public Subject add(Subject a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Subject update(Subject a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Subject delete(Subject a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Subject saveOrUpdate(Subject a) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static void main(String[] args) {
-        SubjectService obj=new SubjectService();      
-        List<Subject> lA= obj.listAll();    
-  
-        for (Subject alo : lA) {
-            alo.getCourse().getCourseId();
-            alo.getCourse().getCourseCode();
-        }
-        
-        System.out.println(lA.size());    
-    }
+    }  
 }

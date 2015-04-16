@@ -1,7 +1,7 @@
 <%-- 
-    Document   : head-private-login
-    Created on : Mar 29, 2015, 9:18:12 PM
-    Author     : Tien Hoang D
+    Document   : inc-head
+    Created on : Apr 17, 2015, 12:06:08 AM
+    Author     : Hoang Dong Tien
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -1,24 +1,24 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 15, 2015 8:50:40 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 17, 2015 12:45:39 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.aprotrain.sl.dal.entity.Student" table="Student" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
         <id name="studentId" type="long">
             <column name="StudentId" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="classUnitByInitClass" class="com.aprotrain.sl.dal.entity.ClassUnit" fetch="select">
-            <column name="InitClass" not-null="true" />
-        </many-to-one>
-        <many-to-one name="classUnitByCurrentClass" class="com.aprotrain.sl.dal.entity.ClassUnit" fetch="select">
-            <column name="CurrentClass" not-null="true" />
-        </many-to-one>
         <many-to-one name="course" class="com.aprotrain.sl.dal.entity.Course" fetch="select">
             <column name="CourseId" />
         </many-to-one>
         <property name="rollnumber" type="string">
             <column name="Rollnumber" length="10" not-null="true" />
+        </property>
+        <property name="initClass" type="long">
+            <column name="InitClass" not-null="true" />
+        </property>
+        <property name="currentClass" type="long">
+            <column name="CurrentClass" not-null="true" />
         </property>
         <property name="rollPortal" type="string">
             <column name="RollPortal" length="20" not-null="true" />
@@ -26,40 +26,40 @@
         <property name="gender" type="java.lang.Short">
             <column name="Gender" />
         </property>
-        <property name="dateOfBirth" type="string">
+        <property name="dateOfBirth" type="serializable">
             <column name="DateOfBirth" not-null="true" />
         </property>
-        <property name="mobilePhone" type="string">
+        <property name="mobilePhone" type="serializable">
             <column name="MobilePhone" not-null="true" />
         </property>
-        <property name="homePhone" type="string">
+        <property name="homePhone" type="serializable">
             <column name="HomePhone" not-null="true" />
         </property>
-        <property name="contactPhone" type="string">
+        <property name="contactPhone" type="serializable">
             <column name="ContactPhone" not-null="true" />
         </property>
         <property name="email" type="string">
             <column name="Email" length="150" />
         </property>
-        <property name="address1" type="string">
+        <property name="address1" type="serializable">
             <column name="Address1" />
         </property>
-        <property name="address2" type="string">
+        <property name="address2" type="serializable">
             <column name="Address2" />
         </property>
-        <property name="joiningDate" type="string">
+        <property name="joiningDate" type="serializable">
             <column name="JoiningDate" />
         </property>
-        <property name="otherSchool" type="string">
+        <property name="otherSchool" type="serializable">
             <column name="OtherSchool" />
         </property>
-        <property name="remarks" type="string">
+        <property name="remarks" type="serializable">
             <column name="Remarks" />
         </property>
         <property name="promotion" type="string">
             <column name="Promotion" length="20" />
         </property>
-        <property name="image" type="string">
+        <property name="image" type="serializable">
             <column name="Image" />
         </property>
         <property name="upgrade1" type="string">
@@ -68,41 +68,23 @@
         <property name="upgrade2" type="string">
             <column name="Upgrade2" length="50" />
         </property>
-        <property name="finishDate" type="string">
+        <property name="finishDate" type="serializable">
             <column name="FinishDate" />
         </property>
-        <property name="finishRemarks" type="string">
+        <property name="finishRemarks" type="serializable">
             <column name="FinishRemarks" />
         </property>
-        <property name="dropoutDate" type="string">
+        <property name="dropoutDate" type="serializable">
             <column name="DropoutDate" />
         </property>
-        <property name="dropoutPaymentMethod" type="string">
+        <property name="dropoutPaymentMethod" type="serializable">
             <column name="DropoutPaymentMethod" />
         </property>
-        <property name="dropoutRemarks" type="string">
+        <property name="dropoutRemarks" type="serializable">
             <column name="DropoutRemarks" />
         </property>
-        <property name="dropoutFillingDate" type="string">
+        <property name="dropoutFillingDate" type="serializable">
             <column name="DropoutFillingDate" />
         </property>
-        <set name="batchStudentLists" table="BatchStudentList" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="StudentId" not-null="true" />
-            </key>
-            <one-to-many class="com.aprotrain.sl.dal.entity.BatchStudentList" />
-        </set>
-        <set name="examAttendances" table="ExamAttendance" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="StudentId" not-null="true" />
-            </key>
-            <one-to-many class="com.aprotrain.sl.dal.entity.ExamAttendance" />
-        </set>
-        <set name="studentTransferHistories" table="StudentTransferHistory" inverse="true" lazy="true" fetch="select">
-            <key>
-                <column name="StudentId" />
-            </key>
-            <one-to-many class="com.aprotrain.sl.dal.entity.StudentTransferHistory" />
-        </set>
     </class>
 </hibernate-mapping>

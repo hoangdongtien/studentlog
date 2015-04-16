@@ -5,8 +5,10 @@
  */
 package com.aprotrain.sl.dal.common;
 
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -16,10 +18,11 @@ import org.hibernate.cfg.Configuration;
  * @author Tien Hoang D
  * @param <T>
  */
-public abstract class AbstractDao<T> implements BaseDao<T>{
+public abstract class AbstractDao<T> implements BaseDao<T> {
+
     private static final SessionFactory sessionFactory;
-    private  Session session;
-    
+    private Session session;
+
     static {
         try {
             // Create the SessionFactory from standard (hibernate.cfg.xml)
@@ -40,13 +43,13 @@ public abstract class AbstractDao<T> implements BaseDao<T>{
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
-    
-    public static void closeSessionFactory(){
-        if (sessionFactory != null && !sessionFactory.isClosed()){
+
+    public static void closeSessionFactory() {
+        if (sessionFactory != null && !sessionFactory.isClosed()) {
             sessionFactory.close();
         }
     }
-    
+
     // Common Methods
     public Session getSession() {
         if (session == null || !session.isOpen()) {
@@ -58,10 +61,75 @@ public abstract class AbstractDao<T> implements BaseDao<T>{
     public void setSession(Session session) {
         this.session = session;
     }
-    
+
     public Session openSession() {
         return sessionFactory.openSession();
     }
-    
-    
+
+    @Override
+    public T add(T a) {
+        Session s = this.getSession();
+        Transaction tx = s.beginTransaction();
+        try {
+            s.save(a);
+            tx.commit();
+
+        } catch (Exception ex) {
+            tx.rollback();
+            throw ex;
+        }
+        s.close();
+        return a;
+    }
+
+    @Override
+    public T saveOrUpdate(T a) {
+        Session s = this.getSession();
+        Transaction tx = s.beginTransaction();
+        try {
+            s.saveOrUpdate(a);
+            tx.commit();
+
+        } catch (Exception ex) {
+            tx.rollback();
+            throw ex;
+        }
+        s.close();
+        return a;
+    }
+
+    @Override
+    public T delete(T a){
+        Session s = this.getSession();
+        Transaction tx = s.beginTransaction();
+        try {
+            s.delete(a);
+            tx.commit();
+
+        } catch (Exception ex) {
+            tx.rollback();
+            throw ex;
+        }
+        s.close();
+        return a;
+    }
+
+    @Override
+    public T update(T a){
+        Session s = this.getSession();
+        Transaction tx = s.beginTransaction();
+        try {
+            s.saveOrUpdate(a);
+            tx.commit();
+
+        } catch (Exception ex) {
+            tx.rollback();
+            throw ex;
+        }
+        s.close();
+        return a;
+    }
+
+  
+
 }

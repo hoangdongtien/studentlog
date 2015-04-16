@@ -3,25 +3,13 @@
 <hibernate-configuration>
   <session-factory>
     <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-    <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=StudentLog_dev</property>
+    <property name="hibernate.connection.url">jdbc:sqlserver://localhost:49174;databaseName=StudentLog_dev</property>
     <property name="hibernate.connection.username">sa</property>
     <property name="hibernate.connection.password">1234567</property>
-    <mapping resource="com/aprotrain/sl/dal/entity/Location.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Exam.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/ExamAttendance.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Subject.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Batch.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Student.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/StudentUpgradeHistory.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/BatchAttendance.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/FacultyDetails.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/BatchStudentList.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Employee.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/ClassUnit.hbm.xml"/>
     <mapping resource="com/aprotrain/sl/dal/entity/Course.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/ClassOpenHouse.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/StudentTransferHistory.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/BatchSession.hbm.xml"/>
-    <mapping resource="com/aprotrain/sl/dal/entity/Room.hbm.xml"/>
+    <mapping/>
+    <mapping resource="com/aprotrain/sl/dal/entity/Subject.hbm.xml"/>
+    <mapping resource="com/aprotrain/sl/dal/entity/Employee.hbm.xml"/>
+    <mapping resource="com/aprotrain/sl/dal/entity/Student.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>
