@@ -623,8 +623,8 @@ insert into Subject values(5,2011,'AWAJS','Architecting Web Applications Using J
 
 go
 select * from Course where CourseCode like '%' + '0' + '%'
-select * from Course a inner join Subject b on a.CourseId=b.CourseId
 
+select * from Subject a inner join Course b on b.CourseId=a.CourseId
 
 go
 select * from Batch
@@ -642,6 +642,6 @@ select * from Student
 select * from StudentTransferHistory
 select * from StudentUpgradeHistory
 
-select * from Course     --here now
 select * from Employee   ---here now
+select * from Course     --here now
 select * from Subject  --Here Now
