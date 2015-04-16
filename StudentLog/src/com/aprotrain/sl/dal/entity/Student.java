@@ -3,6 +3,7 @@ package com.aprotrain.sl.dal.entity;
 
 
 import java.io.Serializable;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,26 +20,26 @@ public class Student  implements java.io.Serializable {
      private String rollnumber;
      private String rollPortal;
      private Short gender;
-     private Serializable dateOfBirth;
-     private Serializable mobilePhone;
-     private Serializable homePhone;
-     private Serializable contactPhone;
+     private String dateOfBirth;
+     private String mobilePhone;
+     private String homePhone;
+     private String contactPhone;
      private String email;
-     private Serializable address1;
-     private Serializable address2;
-     private Serializable joiningDate;
-     private Serializable otherSchool;
-     private Serializable remarks;
+     private String address1;
+     private String address2;
+     private String joiningDate;
+     private String otherSchool;
+     private String remarks;
      private String promotion;
-     private Serializable image;
+     private String image;
      private String upgrade1;
      private String upgrade2;
-     private Serializable finishDate;
-     private Serializable finishRemarks;
-     private Serializable dropoutDate;
-     private Serializable dropoutPaymentMethod;
-     private Serializable dropoutRemarks;
-     private Serializable dropoutFillingDate;
+     private String finishDate;
+     private String finishRemarks;
+     private String dropoutDate;
+     private String dropoutPaymentMethod;
+     private String dropoutRemarks;
+     private String dropoutFillingDate;
      private Set batchStudentLists = new HashSet(0);
      private Set examAttendances = new HashSet(0);
      private Set studentTransferHistories = new HashSet(0);
@@ -47,7 +48,7 @@ public class Student  implements java.io.Serializable {
     }
 
 	
-    public Student(long studentId, ClassUnit classUnitByInitClass, ClassUnit classUnitByCurrentClass, String rollnumber, String rollPortal, Serializable dateOfBirth, Serializable mobilePhone, Serializable homePhone, Serializable contactPhone) {
+    public Student(long studentId, ClassUnit classUnitByInitClass, ClassUnit classUnitByCurrentClass, String rollnumber, String rollPortal, String dateOfBirth, String mobilePhone, String homePhone, String contactPhone) {
         this.studentId = studentId;
         this.classUnitByInitClass = classUnitByInitClass;
         this.classUnitByCurrentClass = classUnitByCurrentClass;
@@ -58,7 +59,7 @@ public class Student  implements java.io.Serializable {
         this.homePhone = homePhone;
         this.contactPhone = contactPhone;
     }
-    public Student(long studentId, ClassUnit classUnitByInitClass, ClassUnit classUnitByCurrentClass, Course course, String rollnumber, String rollPortal, Short gender, Serializable dateOfBirth, Serializable mobilePhone, Serializable homePhone, Serializable contactPhone, String email, Serializable address1, Serializable address2, Serializable joiningDate, Serializable otherSchool, Serializable remarks, String promotion, Serializable image, String upgrade1, String upgrade2, Serializable finishDate, Serializable finishRemarks, Serializable dropoutDate, Serializable dropoutPaymentMethod, Serializable dropoutRemarks, Serializable dropoutFillingDate, Set batchStudentLists, Set examAttendances, Set studentTransferHistories) {
+    public Student(long studentId, ClassUnit classUnitByInitClass, ClassUnit classUnitByCurrentClass, Course course, String rollnumber, String rollPortal, Short gender, String dateOfBirth, String mobilePhone, String homePhone, String contactPhone, String email, String address1, String address2, String joiningDate, String otherSchool, String remarks, String promotion, String image, String upgrade1, String upgrade2, String finishDate, String finishRemarks, String dropoutDate, String dropoutPaymentMethod, String dropoutRemarks, String dropoutFillingDate, Set batchStudentLists, Set examAttendances, Set studentTransferHistories) {
        this.studentId = studentId;
        this.classUnitByInitClass = classUnitByInitClass;
        this.classUnitByCurrentClass = classUnitByCurrentClass;
@@ -140,32 +141,32 @@ public class Student  implements java.io.Serializable {
     public void setGender(Short gender) {
         this.gender = gender;
     }
-    public Serializable getDateOfBirth() {
+    public String getDateOfBirth() {
         return this.dateOfBirth;
     }
     
-    public void setDateOfBirth(Serializable dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-    public Serializable getMobilePhone() {
+    public String getMobilePhone() {
         return this.mobilePhone;
     }
     
-    public void setMobilePhone(Serializable mobilePhone) {
+    public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
     }
-    public Serializable getHomePhone() {
+    public String getHomePhone() {
         return this.homePhone;
     }
     
-    public void setHomePhone(Serializable homePhone) {
+    public void setHomePhone(String homePhone) {
         this.homePhone = homePhone;
     }
-    public Serializable getContactPhone() {
+    public String getContactPhone() {
         return this.contactPhone;
     }
     
-    public void setContactPhone(Serializable contactPhone) {
+    public void setContactPhone(String contactPhone) {
         this.contactPhone = contactPhone;
     }
     public String getEmail() {
@@ -175,39 +176,39 @@ public class Student  implements java.io.Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-    public Serializable getAddress1() {
+    public String getAddress1() {
         return this.address1;
     }
     
-    public void setAddress1(Serializable address1) {
+    public void setAddress1(String address1) {
         this.address1 = address1;
     }
-    public Serializable getAddress2() {
+    public String getAddress2() {
         return this.address2;
     }
     
-    public void setAddress2(Serializable address2) {
+    public void setAddress2(String address2) {
         this.address2 = address2;
     }
-    public Serializable getJoiningDate() {
+    public String getJoiningDate() {
         return this.joiningDate;
     }
     
-    public void setJoiningDate(Serializable joiningDate) {
+    public void setJoiningDate(String joiningDate) {
         this.joiningDate = joiningDate;
     }
-    public Serializable getOtherSchool() {
+    public String getOtherSchool() {
         return this.otherSchool;
     }
     
-    public void setOtherSchool(Serializable otherSchool) {
+    public void setOtherSchool(String otherSchool) {
         this.otherSchool = otherSchool;
     }
-    public Serializable getRemarks() {
+    public String getRemarks() {
         return this.remarks;
     }
     
-    public void setRemarks(Serializable remarks) {
+    public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
     public String getPromotion() {
@@ -217,11 +218,11 @@ public class Student  implements java.io.Serializable {
     public void setPromotion(String promotion) {
         this.promotion = promotion;
     }
-    public Serializable getImage() {
+    public String getImage() {
         return this.image;
     }
     
-    public void setImage(Serializable image) {
+    public void setImage(String image) {
         this.image = image;
     }
     public String getUpgrade1() {
@@ -238,46 +239,46 @@ public class Student  implements java.io.Serializable {
     public void setUpgrade2(String upgrade2) {
         this.upgrade2 = upgrade2;
     }
-    public Serializable getFinishDate() {
+    public String getFinishDate() {
         return this.finishDate;
     }
     
-    public void setFinishDate(Serializable finishDate) {
+    public void setFinishDate(String finishDate) {
         this.finishDate = finishDate;
     }
-    public Serializable getFinishRemarks() {
+    public String getFinishRemarks() {
         return this.finishRemarks;
     }
     
-    public void setFinishRemarks(Serializable finishRemarks) {
+    public void setFinishRemarks(String finishRemarks) {
         this.finishRemarks = finishRemarks;
     }
-    public Serializable getDropoutDate() {
+    public String getDropoutDate() {
         return this.dropoutDate;
     }
     
-    public void setDropoutDate(Serializable dropoutDate) {
+    public void setDropoutDate(String dropoutDate) {
         this.dropoutDate = dropoutDate;
     }
-    public Serializable getDropoutPaymentMethod() {
+    public String getDropoutPaymentMethod() {
         return this.dropoutPaymentMethod;
     }
     
-    public void setDropoutPaymentMethod(Serializable dropoutPaymentMethod) {
+    public void setDropoutPaymentMethod(String dropoutPaymentMethod) {
         this.dropoutPaymentMethod = dropoutPaymentMethod;
     }
-    public Serializable getDropoutRemarks() {
+    public String getDropoutRemarks() {
         return this.dropoutRemarks;
     }
     
-    public void setDropoutRemarks(Serializable dropoutRemarks) {
+    public void setDropoutRemarks(String dropoutRemarks) {
         this.dropoutRemarks = dropoutRemarks;
     }
-    public Serializable getDropoutFillingDate() {
+    public String getDropoutFillingDate() {
         return this.dropoutFillingDate;
     }
     
-    public void setDropoutFillingDate(Serializable dropoutFillingDate) {
+    public void setDropoutFillingDate(String dropoutFillingDate) {
         this.dropoutFillingDate = dropoutFillingDate;
     }
     public Set getBatchStudentLists() {

@@ -605,8 +605,25 @@ GO
 
 go
 insert into Employee values('Nguyen Hoang Viet','123','mrlytieudao@gmail.com','mrlytieudao@gmail.com','16-5-1987',GETDATE(),'123',1)
-insert into Employee values('Nguyen Hoang Long','123','mrlytieudao@gmail.com','mrlytieudao@gmail.com','16-5-1995',GETDATE(),'123',1)
-insert into Employee values('Nguyen van tuan','123','mrlytieudao@gmail.com','mrlytieudao@gmail.com','16-5-1995',GETDATE(),'123',1)
+insert into Employee values('Nguyen Hoang Long','123','Long@gmail.com','Long@gmail.com','16-5-1995',GETDATE(),'123',0)
+insert into Employee values('Nguyen van tuan','123','tuan@gmail.com','tuan@gmail.com','16-5-1995',GETDATE(),'123',2)
+
+go
+insert into Course values(2011,'ACCP2011',2015,'Working',1)
+insert into Course values(2010,'ACCP2010',2013,'End',0)
+insert into Course values(2013,'ACCP2013',2020,'Working',1)
+
+go
+insert into Subject values(1,2011,'JAVA1','Programing with java',2,10,48)
+insert into Subject values(2,2011,'APJ1','Advanced Programing with java',2,10,50)
+insert into Subject values(3,2011,'APJ2','Avanced Programing with java 2',2,10,70)
+insert into Subject values(4,2011,'WPSJ','Programing with JSP and Servlet',4,10,48)
+insert into Subject values(5,2011,'AWAJS','Architecting Web Applications Using JSF and Struts',4,10,48)
+
+
+go
+select * from Course where CourseCode like '%' + '0' + '%'
+select * from Course a inner join Subject b on a.CourseId=b.CourseId
 
 
 go
@@ -616,8 +633,6 @@ select * from BatchSession
 select * from BatchStudentList
 select * from ClassOpenHouse
 select * from ClassUnit
-select * from Course
-select * from Employee
 select * from Exam
 select * from ExamAttendance
 select * from FacultyDetails
@@ -626,4 +641,7 @@ select * from Room
 select * from Student
 select * from StudentTransferHistory
 select * from StudentUpgradeHistory
-select * from Subject
+
+select * from Course     --here now
+select * from Employee   ---here now
+select * from Subject  --Here Now

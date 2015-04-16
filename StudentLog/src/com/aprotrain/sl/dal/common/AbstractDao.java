@@ -14,6 +14,7 @@ import org.hibernate.cfg.Configuration;
 /**
  *
  * @author Tien Hoang D
+ * @param <T>
  */
 public abstract class AbstractDao<T> implements BaseDao<T>{
     private static final SessionFactory sessionFactory;

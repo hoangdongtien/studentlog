@@ -11,7 +11,6 @@ import java.util.Set;
  */
 public class Employee  implements java.io.Serializable {
 
-
      private long employeeId;
      private String fullname;
      private String socialId;
@@ -113,9 +112,6 @@ public class Employee  implements java.io.Serializable {
     public void setFacultyDetailses(Set facultyDetailses) {
         this.facultyDetailses = facultyDetailses;
     }
-
-
-
 
 }
 

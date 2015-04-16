@@ -6,7 +6,7 @@
     <class name="com.aprotrain.sl.dal.entity.Employee" table="Employee" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
         <id name="employeeId" type="long">
             <column name="EmployeeId" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="fullname" type="string">
             <column name="Fullname" />

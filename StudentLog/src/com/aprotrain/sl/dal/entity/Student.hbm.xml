@@ -26,40 +26,40 @@
         <property name="gender" type="java.lang.Short">
             <column name="Gender" />
         </property>
-        <property name="dateOfBirth" type="serializable">
+        <property name="dateOfBirth" type="string">
             <column name="DateOfBirth" not-null="true" />
         </property>
-        <property name="mobilePhone" type="serializable">
+        <property name="mobilePhone" type="string">
             <column name="MobilePhone" not-null="true" />
         </property>
-        <property name="homePhone" type="serializable">
+        <property name="homePhone" type="string">
             <column name="HomePhone" not-null="true" />
         </property>
-        <property name="contactPhone" type="serializable">
+        <property name="contactPhone" type="string">
             <column name="ContactPhone" not-null="true" />
         </property>
         <property name="email" type="string">
             <column name="Email" length="150" />
         </property>
-        <property name="address1" type="serializable">
+        <property name="address1" type="string">
             <column name="Address1" />
         </property>
-        <property name="address2" type="serializable">
+        <property name="address2" type="string">
             <column name="Address2" />
         </property>
-        <property name="joiningDate" type="serializable">
+        <property name="joiningDate" type="string">
             <column name="JoiningDate" />
         </property>
-        <property name="otherSchool" type="serializable">
+        <property name="otherSchool" type="string">
             <column name="OtherSchool" />
         </property>
-        <property name="remarks" type="serializable">
+        <property name="remarks" type="string">
             <column name="Remarks" />
         </property>
         <property name="promotion" type="string">
             <column name="Promotion" length="20" />
         </property>
-        <property name="image" type="serializable">
+        <property name="image" type="string">
             <column name="Image" />
         </property>
         <property name="upgrade1" type="string">
@@ -68,22 +68,22 @@
         <property name="upgrade2" type="string">
             <column name="Upgrade2" length="50" />
         </property>
-        <property name="finishDate" type="serializable">
+        <property name="finishDate" type="string">
             <column name="FinishDate" />
         </property>
-        <property name="finishRemarks" type="serializable">
+        <property name="finishRemarks" type="string">
             <column name="FinishRemarks" />
         </property>
-        <property name="dropoutDate" type="serializable">
+        <property name="dropoutDate" type="string">
             <column name="DropoutDate" />
         </property>
-        <property name="dropoutPaymentMethod" type="serializable">
+        <property name="dropoutPaymentMethod" type="string">
             <column name="DropoutPaymentMethod" />
         </property>
-        <property name="dropoutRemarks" type="serializable">
+        <property name="dropoutRemarks" type="string">
             <column name="DropoutRemarks" />
         </property>
-        <property name="dropoutFillingDate" type="serializable">
+        <property name="dropoutFillingDate" type="string">
             <column name="DropoutFillingDate" />
         </property>
         <set name="batchStudentLists" table="BatchStudentList" inverse="true" lazy="true" fetch="select">

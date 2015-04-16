@@ -13,9 +13,9 @@ public class Course  implements java.io.Serializable {
 
 
      private long courseId;
-     private Serializable courseCode;
+     private String courseCode;
      private Integer year;
-     private Serializable remarks;
+     private String remarks;
      private Byte status;
      private Set subjects = new HashSet(0);
      private Set students = new HashSet(0);
@@ -24,11 +24,11 @@ public class Course  implements java.io.Serializable {
     }
 
 	
-    public Course(long courseId, Serializable courseCode) {
+    public Course(long courseId, String courseCode) {
         this.courseId = courseId;
         this.courseCode = courseCode;
     }
-    public Course(long courseId, Serializable courseCode, Integer year, Serializable remarks, Byte status, Set subjects, Set students) {
+    public Course(long courseId, String courseCode, Integer year, String remarks, Byte status, Set subjects, Set students) {
        this.courseId = courseId;
        this.courseCode = courseCode;
        this.year = year;
@@ -45,11 +45,11 @@ public class Course  implements java.io.Serializable {
     public void setCourseId(long courseId) {
         this.courseId = courseId;
     }
-    public Serializable getCourseCode() {
+    public String getCourseCode() {
         return this.courseCode;
     }
     
-    public void setCourseCode(Serializable courseCode) {
+    public void setCourseCode(String courseCode) {
         this.courseCode = courseCode;
     }
     public Integer getYear() {
@@ -59,11 +59,11 @@ public class Course  implements java.io.Serializable {
     public void setYear(Integer year) {
         this.year = year;
     }
-    public Serializable getRemarks() {
+    public String getRemarks() {
         return this.remarks;
     }
     
-    public void setRemarks(Serializable remarks) {
+    public void setRemarks(String remarks) {
         this.remarks = remarks;
     }
     public Byte getStatus() {

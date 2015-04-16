@@ -8,9 +8,6 @@ package com.aprotrain.sl.dal.dao;
 import com.aprotrain.sl.dal.common.AbstractDao;
 import com.aprotrain.sl.dal.entity.Course;
 import com.aprotrain.sl.dal.entity.Employee;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -20,31 +17,45 @@ import org.hibernate.Transaction;
  *
  * @author admin
  */
-public class EmployeeService extends AbstractDao<Employee> {
-
-    public EmployeeService() {
-
-    }
+public class CourseService extends AbstractDao<Course> {
 
     @Override
-    public List<Employee> listAll() {
+    public List<Course> listAll() {
         Session session = this.getSession();
 
-        Query query = session.createQuery("From Employee");
-        List<Employee> listEmp = query.list();
+        Query query = session.createQuery("From Course");
+        List<Course> listCourse = query.list();
 
         session.close();
-        return listEmp;
+        return listCourse;
     }
 
     @Override
-    public Employee add(Employee e) {
+    public Course add(Course a) {
         Transaction tran = null;
         Session session = this.getSession();
 
         try {
             tran = session.beginTransaction();
-            session.save(e);
+            session.save(a);
+            tran.commit();
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+            tran.rollback();
+        }
+        session.close();
+        return a;
+    }
+
+    @Override
+    public Course update(Course cou) {
+        Transaction tran = null;
+        Session session = this.getSession();
+
+        try {
+            tran = session.beginTransaction();
+            session.update(String.valueOf(cou.getCourseId()), cou);
             tran.commit();
 
         } catch (Exception ex) {
@@ -53,36 +64,17 @@ public class EmployeeService extends AbstractDao<Employee> {
         }
 
         session.close();
-        return e;
+        return cou;
     }
 
     @Override
-    public Employee update(Employee emp) {
+    public Course delete(Course cou) {
         Transaction tran = null;
         Session session = this.getSession();
 
         try {
             tran = session.beginTransaction();
-            session.update(String.valueOf(emp.getEmployeeId()), emp);
-            tran.commit();
-
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            tran.rollback();
-        }
-
-        session.close();
-        return emp;
-    }
-
-    @Override
-    public Employee delete(Employee emp) {
-        Transaction tran = null;
-        Session session = this.getSession();
-
-        try {
-            tran = session.beginTransaction();
-            session.delete(emp);
+            session.delete(cou);
 
             tran.commit();
         } catch (Exception ex) {
@@ -91,18 +83,17 @@ public class EmployeeService extends AbstractDao<Employee> {
         }
 
         session.close();
-        return emp;
+        return cou;
     }
 
-    //saveOrUpdate ko chay dc khi id la new ko tao moi dc @@ vi khi la id new no nhan luong ID nen chet cot tu tang identity
     @Override
-    public Employee saveOrUpdate(Employee emp) {
+    public Course saveOrUpdate(Course cou) {
         Transaction tran = null;
         Session session = this.getSession();
 
         try {
             tran = session.beginTransaction();
-            session.saveOrUpdate(emp);
+            session.saveOrUpdate(cou);
             tran.commit();
 
         } catch (Exception ex) {
@@ -111,43 +102,24 @@ public class EmployeeService extends AbstractDao<Employee> {
         }
 
         session.close();
-        return emp;
+        return cou;
     }
 
-    public Employee checkLogin(String internalEmail, String password) {
+    public List<Course> search(String CourseCode) {
         Session session = this.getSession();
 
-        Query query = session.createQuery("FROM Employee WHERE internalEmail=:mail AND password=:password");
-        query.setString("mail", internalEmail);
-        query.setString("password", password);
-        query.setMaxResults(1);
+        Query query = session.createQuery("FROM Course WHERE CourseCode like '%' + :CC + '%'");
+        query.setParameter("CC", CourseCode);
 
-        List<Employee> list = query.list();
-        Employee e = null;
-        if (!list.isEmpty()) {
-            e = list.get(0);
-        }
-
-        session.close();
-
-        return e;
-    }
-
-    public List<Employee> search(String FullName) {
-        Session session = this.getSession();
-
-        Query query = session.createQuery("FROM Employee WHERE FullName like '%' + :FName + '%'");
-        query.setParameter("FName", FullName);
-
-        List<Employee> list = query.list();
+        List<Course> list = query.list();
         session.close();
 
         return list;
     }
 
     public static void main(String[] args) {
-        EmployeeService obj = new EmployeeService();
-        List<Employee> listC = obj.search("v");
+        CourseService obj = new CourseService();
+        List<Course> listC = obj.search("0");
         System.out.println(listC.size());
     }
 }
