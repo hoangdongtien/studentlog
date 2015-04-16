@@ -578,7 +578,5 @@
         <!-- /#wrapper -->
 
         <tiles:insertTemplate  template="/common/inc-bottom.jsp"/>
-
     </body>
-
 </html>

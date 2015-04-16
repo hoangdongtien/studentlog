@@ -1,7 +1,10 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib  prefix="s" uri="/struts-tags" %>
-<%@taglib  prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+<%-- 
+    Document   : nav-top-bar
+    Created on : Apr 17, 2015, 1:17:43 AM
+    Author     : Hoang Dong Tien
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>

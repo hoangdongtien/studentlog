@@ -1,3 +1,6 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib  prefix="s" uri="/struts-tags" %>
+<%@taglib  prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <!-- jQuery -->
 <script src="<s:url value="/statics/jquery/dist/jquery.min.js" />"></script>
 
