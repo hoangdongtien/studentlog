@@ -5,7 +5,7 @@
  */
 package test;
 
-import com.aprotrain.sl.dal.dao.CourseService;
+import com.aprotrain.sl.dal.dao.impl.CourseService;
 import com.aprotrain.sl.dal.entity.Course;
 import com.aprotrain.sl.dal.entity.Employee;
 import java.util.List;

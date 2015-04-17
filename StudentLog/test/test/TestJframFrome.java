@@ -5,7 +5,7 @@
  */
 package test;
 
-import com.aprotrain.sl.dal.dao.EmployeeService;
+import com.aprotrain.sl.dal.dao.impl.EmployeeService;
 import com.aprotrain.sl.dal.entity.Employee;
 import java.util.List;
 import javax.swing.JOptionPane;

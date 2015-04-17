@@ -5,7 +5,7 @@
  */
 package test;
 
-import com.aprotrain.sl.dal.dao.SubjectService;
+import com.aprotrain.sl.dal.dao.impl.SubjectService;
 import com.aprotrain.sl.dal.entity.Subject;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;

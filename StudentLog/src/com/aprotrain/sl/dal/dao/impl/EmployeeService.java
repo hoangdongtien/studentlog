@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.aprotrain.sl.dal.dao;
+package com.aprotrain.sl.dal.dao.impl;
 
 import com.aprotrain.sl.dal.common.AbstractDao;
 import com.aprotrain.sl.dal.entity.Employee;

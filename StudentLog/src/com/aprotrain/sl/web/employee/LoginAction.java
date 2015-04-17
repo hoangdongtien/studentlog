@@ -6,7 +6,7 @@
 package com.aprotrain.sl.web.employee;
 
 import com.aprotrain.sl.web.common.AbstractAction;
-import com.aprotrain.sl.dal.dao.EmployeeService;
+import com.aprotrain.sl.dal.dao.impl.EmployeeService;
 import com.aprotrain.sl.dal.entity.Employee;
 
 /**
