@@ -6,17 +6,17 @@
 package com.aprotrain.sl.dal.dao.impl;
 
 import com.aprotrain.sl.dal.common.AbstractDao;
+import com.aprotrain.sl.dal.dao.CourseService;
 import com.aprotrain.sl.dal.entity.Course;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 /**
  *
  * @author admin
  */
-public class CourseService extends AbstractDao<Course> {
+public class CourseServiceImpl extends AbstractDao<Course> implements CourseService  {
 
     @Override
     public List<Course> listAll() {

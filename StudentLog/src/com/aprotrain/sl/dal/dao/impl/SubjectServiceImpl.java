@@ -16,7 +16,7 @@ import org.hibernate.Session;
  *
  * @author admin
  */
-public class SubjectService extends AbstractDao<Subject> {
+public class SubjectServiceImpl extends AbstractDao<Subject> {
 
     @Override
     public List<Subject> listAll() {

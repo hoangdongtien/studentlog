@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <title>
-            <tiles:insertAttribute name="content" /> 
+            <tiles:insertAttribute name="head-title" /> 
         </title>
         <link href="<s:url value="/statics/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
         <link href="<s:url value="/statics/metisMenu/dist/metisMenu.min.css" />" rel="stylesheet">
@@ -46,7 +46,7 @@
             </nav>
 
             <div id="page-wrapper">
-                <tiles:insertAttribute name="content" value="default" />
+                <tiles:insertAttribute name="content"  />
             </div>
             <!-- /#page-wrapper -->
 

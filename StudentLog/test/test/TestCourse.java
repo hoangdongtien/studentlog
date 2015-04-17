@@ -5,7 +5,7 @@
  */
 package test;
 
-import com.aprotrain.sl.dal.dao.impl.CourseService;
+import com.aprotrain.sl.dal.dao.impl.CourseServiceImpl;
 import com.aprotrain.sl.dal.entity.Course;
 import com.aprotrain.sl.dal.entity.Employee;
 import java.util.List;
@@ -20,7 +20,7 @@ public class TestCourse extends javax.swing.JFrame {
 
     String[] title = {"CourseID", "CourseCode", "Year", "Remarks", "Status"};
     DefaultTableModel dftblCourse;
-    CourseService obj = new CourseService();
+    CourseServiceImpl obj = new CourseServiceImpl();
 
     public TestCourse() {
         initComponents();

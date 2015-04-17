@@ -5,7 +5,7 @@
  */
 package test;
 
-import com.aprotrain.sl.dal.dao.impl.SubjectService;
+import com.aprotrain.sl.dal.dao.impl.SubjectServiceImpl;
 import com.aprotrain.sl.dal.entity.Subject;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -18,7 +18,7 @@ public class SubjecJframeForm extends javax.swing.JFrame {
 
     String[] title={"SubjectID","Subject Code","Title","Semeter","Subject Order","Total Session","CourseID", "CourseCode", "Year", "Remarks", "Status"};
     DefaultTableModel dftblSubjectCourse;
-    SubjectService obj=new SubjectService();
+    SubjectServiceImpl obj=new SubjectServiceImpl();
     
     public SubjecJframeForm() {
         initComponents();

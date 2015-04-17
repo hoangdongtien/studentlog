@@ -5,18 +5,17 @@
    "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
 
 <tiles-definitions>
-   <definition name="baseDashboardLayout" template="/employee/base.jsp">
-       <put-attribute name="head-common"  value="/employee/head-common.jsp"/>
+   <definition name="baseDashboardLayout" template="/common/base.jsp">
        <put-attribute name="head-title"  value="Dashboard"/>
-   </definition>
-
-   <definition name="aaeLayout" extends="baseDashboardLayout">
-      <put-attribute name="head-title"  value="Academic Administration Executive"/>  
    </definition>
    
    <definition name="login" template="/employee/login.jsp">
-       <put-attribute name="head-common"  value="/employee/head-common.jsp"/>
-       <put-attribute name="head-title"  value="LoginABC"/>
+       <put-attribute name="head-title"  value="Login"/>
+   </definition>
+   
+   <definition name="course-list" extends="baseDashboardLayout">
+       <put-attribute name="head-title"  value="Course List"/>
+       <put-attribute name="content"  value="/course/list.jsp"/>
    </definition>
 
 </tiles-definitions>

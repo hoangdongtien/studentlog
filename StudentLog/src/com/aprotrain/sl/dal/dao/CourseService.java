@@ -3,14 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.aprotrain.sl.web.employee;
+package com.aprotrain.sl.dal.dao;
 
-import com.aprotrain.sl.web.common.AbstractAction;
+import com.aprotrain.sl.dal.common.BaseDao;
+import com.aprotrain.sl.dal.entity.Course;
 
 /**
  *
  * @author Hoang Dong Tien
  */
-public class CourseAction extends AbstractAction {
+public interface CourseService extends BaseDao<Course>{
     
 }

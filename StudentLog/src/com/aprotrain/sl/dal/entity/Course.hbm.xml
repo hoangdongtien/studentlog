@@ -8,13 +8,13 @@
             <column name="CourseId" />
             <generator class="assigned" />
         </id>
-        <property name="courseCode" type="serializable">
+        <property name="courseCode" type="string">
             <column name="CourseCode" not-null="true" />
         </property>
         <property name="year" type="java.lang.Integer">
             <column name="Year" />
         </property>
-        <property name="remarks" type="serializable">
+        <property name="remarks" type="string">
             <column name="Remarks" />
         </property>
         <property name="status" type="java.lang.Byte">

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.aprotrain.sl.web.employee;
+package com.aprotrain.sl.web.dashboard;
 
 import com.aprotrain.sl.web.common.AbstractAction;
-import com.aprotrain.sl.dal.dao.impl.EmployeeService;
+import com.aprotrain.sl.dal.dao.impl.EmployeeServiceImpl;
 import com.aprotrain.sl.dal.entity.Employee;
 
 /**
@@ -15,16 +15,16 @@ import com.aprotrain.sl.dal.entity.Employee;
  */
 public class LoginAction extends AbstractAction {
     private Employee employee;
-    private EmployeeService employeeService;
+    private EmployeeServiceImpl employeeService;
 
     public LoginAction() {
     }
 
-    public EmployeeService getEmployeeService() {
+    public EmployeeServiceImpl getEmployeeService() {
         return employeeService;
     }
 
-    public void setEmployeeService(EmployeeService service) {
+    public void setEmployeeService(EmployeeServiceImpl service) {
         this.employeeService = service;
     }
 

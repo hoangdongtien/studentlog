@@ -5,7 +5,7 @@
  */
 package test;
 
-import com.aprotrain.sl.dal.dao.impl.EmployeeService;
+import com.aprotrain.sl.dal.dao.impl.EmployeeServiceImpl;
 import com.aprotrain.sl.dal.entity.Employee;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -19,7 +19,7 @@ public class TestJframFrome extends javax.swing.JFrame {
 
     String[] title = {"Employee ID", "FullName", "SocialID", "InternalEMail", "External Email", "DOB", "Joining Date", "Password", "Status"};
     DefaultTableModel dftblEmployee;
-    EmployeeService obj = new EmployeeService();
+    EmployeeServiceImpl obj = new EmployeeServiceImpl();
 
     public TestJframFrome() {
         initComponents();

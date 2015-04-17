@@ -2,11 +2,14 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
 "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
-    <!-- Service Bean configuration 
-    <bean id="employeeService" class="com.aprotrain.sl.dal.dao.EmployeeService"></bean>
+    <!-- Service Bean configuration -->
+    <bean id="courseService" class="com.aprotrain.sl.dal.dao.impl.CourseServiceImpl"></bean>
 
-     Struts Action Bean configuration 
-    <bean id="loginAction" class="com.aprotrain.sl.web.employee.LoginAction">
-      </bean>
-      -->
+     <!--Struts Action Bean configuration--> 
+    <bean id="loginAction" class="com.aprotrain.sl.web.dashboard.LoginAction">
+        
+    </bean>
+    <bean id="courseAction" class="com.aprotrain.sl.web.dashboard.CourseAction">
+        <property name="courseService" ref="courseService" />
+    </bean>
 </beans>

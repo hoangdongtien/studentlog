@@ -6,7 +6,6 @@
 package com.aprotrain.sl.web.common;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 
 /**
  *

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <tiles:insertAttribute name="head-common" />
+        <tiles:insertTemplate template="" />
         <title>
             <tiles:insertAttribute name="head-title" />
         </title>

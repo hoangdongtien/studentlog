@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author admin
  */
-public class StudentService extends AbstractDao<Student>{
+public class StudentServiceImpl extends AbstractDao<Student>{
 
     @Override
     public List<Student> listAll() {

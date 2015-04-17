@@ -15,9 +15,9 @@ import org.hibernate.Session;
  *
  * @author admin
  */
-public class EmployeeService extends AbstractDao<Employee> {
+public class EmployeeServiceImpl extends AbstractDao<Employee> {
 
-    public EmployeeService() {
+    public EmployeeServiceImpl() {
 
     }
 
