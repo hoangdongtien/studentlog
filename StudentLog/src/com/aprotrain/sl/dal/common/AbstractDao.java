@@ -6,6 +6,7 @@
 package com.aprotrain.sl.dal.common;
 
 import java.util.List;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -19,9 +20,17 @@ import org.hibernate.cfg.Configuration;
  * @param <T>
  */
 public abstract class AbstractDao<T> implements BaseDao<T> {
-
     private static final SessionFactory sessionFactory;
     private Session session;
+    private Class<T> type;
+
+    public Class<T> getEntityType() {
+        return type;
+    }
+
+    public void setEntityType(Class<T> type) {
+        this.type = type;
+    }
 
     static {
         try {
@@ -130,6 +139,14 @@ public abstract class AbstractDao<T> implements BaseDao<T> {
         return a;
     }
 
-  
+    @Override
+    public List<T> listAll(){
+        Session s = this.getSession();
+        Criteria criteria = s.createCriteria(this.getEntityType());
+
+        List<T> list = criteria.list();
+        s.close();
+        return list;
+    }
 
 }
