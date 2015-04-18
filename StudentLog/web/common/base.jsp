@@ -46,13 +46,21 @@
             </nav>
 
             <div id="page-wrapper">
-                <tiles:insertAttribute name="content"  />
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header"><tiles:insertAttribute name="page-header" /></h1>
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                    <!-- /.row -->
+                    <tiles:insertAttribute name="content"  />
+                </div>
+                <!-- /#page-wrapper -->
+
             </div>
-            <!-- /#page-wrapper -->
+            <!-- /#wrapper -->
 
-        </div>
-        <!-- /#wrapper -->
-
-        <tiles:insertTemplate  template="/common/inc-bottom.jsp"/>
-    </body>
-</html>
+            <tiles:insertTemplate  template="/common/inc-bottom.jsp"/>
+        </body>
+    </html>

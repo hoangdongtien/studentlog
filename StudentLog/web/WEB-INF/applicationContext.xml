@@ -3,8 +3,10 @@
 "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
     <!-- Service Bean configuration -->
-    <bean id="courseService" class="com.aprotrain.sl.dal.dao.impl.CourseServiceImpl"></bean>
-
+    <bean id="courseService"    class="com.aprotrain.sl.dal.dao.impl.CourseServiceImpl"></bean>
+    <bean id="classUnitService" class="com.aprotrain.sl.dal.dao.impl.ClassUnitServiceImpl"></bean>
+    
+    
      <!--Struts Action Bean configuration--> 
     <bean id="loginAction" class="com.aprotrain.sl.web.dashboard.LoginAction">
         

@@ -17,5 +17,16 @@
        <put-attribute name="head-title"  value="Course List"/>
        <put-attribute name="content"  value="/course/list.jsp"/>
    </definition>
+   
+    <definition name="course-input-new" extends="baseDashboardLayout">
+       <put-attribute name="head-title"  value="Khóa học - Thêm mới"/>
+       <put-attribute name="page-header"  value="Thêm mới khóa học"/>
+       <put-attribute name="content"  value="/course/input.jsp"/>
+   </definition>
+    <definition name="course-input-edit" extends="baseDashboardLayout">
+       <put-attribute name="head-title"  value="Khóa học - Cập nhật"/>
+       <put-attribute name="page-header"  value="Cập nhật khóa học"/>
+       <put-attribute name="content"  value="/course/input.jsp"/>
+   </definition>
 
 </tiles-definitions>

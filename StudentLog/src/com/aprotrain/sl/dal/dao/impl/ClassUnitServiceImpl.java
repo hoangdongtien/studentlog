@@ -13,9 +13,9 @@ import com.aprotrain.sl.dal.entity.ClassUnit;
  *
  * @author admin
  */
-public class ClassUnitImpl extends AbstractDao<ClassUnit> implements ClassUnitService {
+public class ClassUnitServiceImpl extends AbstractDao<ClassUnit> implements ClassUnitService {
 
-    public ClassUnitImpl() {
+    public ClassUnitServiceImpl() {
         super();
         this.setEntityType(ClassUnit.class);
     }

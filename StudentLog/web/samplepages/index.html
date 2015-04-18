@@ -1,6 +1,4 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib  prefix="s" uri="/struts-tags" %>
-<%@taglib  prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,29 +13,29 @@
         <title>SB Admin 2 - Bootstrap Admin Theme</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="<s:url value="/statics/bootstrap/css/bootstrap.min.css" />" rel="stylesheet">
+    <link href="../statics/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-        <!-- MetisMenu CSS -->
-        <link href="<s:url value="/statics/metisMenu/dist/metisMenu.min.css" />" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../statics/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
 
-        <!-- Timeline CSS -->
-        <link href="<s:url value="/statics/sbadmin/css/timeline.css" />" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="../statics/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
 
-        <!-- Custom CSS -->
-        <link href="<s:url value="/statics/sbadmin/css/sb-admin-2.css" />" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="../statics/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
 
-        <!-- Morris Charts CSS -->
-        <link href="<s:url value="/statics/morrisjs/morris.css" />" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../statics/sbadmin/css/sb-admin-2.css" rel="stylesheet">
 
-        <!-- Custom Fonts -->
-        <link href="<s:url value="/statics/font-awesome/css/font-awesome.min.css" />" rel="stylesheet" type="text/css">
+    <!-- Custom Fonts -->
+    <link href="../statics/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
     </head>
 
@@ -922,7 +920,30 @@
         </div>
         <!-- /#wrapper -->
 
-       
+       <!-- jQuery -->
+    <script src="../statics/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../statics/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../statics/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="../statics/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="../statics/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../statics/sbadmin/js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+    </script>
 
     </body>
 

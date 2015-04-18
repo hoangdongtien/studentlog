@@ -35,6 +35,18 @@
         <action  name="list" method="list" class="courseAction">
             <result name="list" type="tiles">course-list</result>
         </action>
+        
+        <action  name="add" method="add" class="courseAction">
+            <result name="input" type="tiles">course-input-new</result>
+        </action>
+        
+        <action  name="save" method="save" class="courseAction">
+            <result name="changefinish" type="chain">list</result>
+        </action>
+        
+        <action name="edit" method="edit" class="courseAction">
+            <result name="input" type="tiles">course-input-edit</result>
+        </action>
     </package>
     
     

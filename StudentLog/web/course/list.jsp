@@ -16,12 +16,12 @@
     <div class="col-lg-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> Thêm khóa học mới
+                Danh sách
                 <div class="pull-right">
                     <div class="btn-group">
                         <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                             Actions
-                            <span class="caret">a</span>
+                            <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu pull-right" role="menu">
                             <li><a href="#">Action</a>
@@ -44,56 +44,26 @@
                         <thead>
                             <tr>
                                 <th>Course</th>                                
+                                <th>Year</th>                                
+                                <th>Remarks</th>                                
+                                <th>Status</th>  
+                                <th>Edit</th>                                
+                                <th>Delete</th>
                             </tr>
                         </thead>
-                        
+
                         <s:iterator value="courseList" var="c">
                             <tr>
                                 <td>${c.courseCode}</td>                                
+                                <td>${c.year}</td>                                
+                                <td>${c.remarks}</td>                                
+                                <td>${c.status}</td>   
+                                <td><a href="#" class="deletelink"></a> </td>                                
+                                <td><a href="#" class="deletelink"></a></td>
                             </tr>
                         </s:iterator>
                     </table>
                 </div>
-            </div>
-            <!-- /.panel-body -->
-        </div>
-        <!-- /.panel -->                        
-
-    </div>
-    <!-- /.col-lg-8 -->
-
-</div>
-<!-- /.row -->
-
-<!-- /.row -->
-<div class="row">
-    <div class="col-lg-12">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <i class="fa fa-bar-chart-o fa-fw"></i> Danh sách khóa học
-                <div class="pull-right">
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                            Actions
-                            <span class="caret">a</span>
-                        </button>
-                        <ul class="dropdown-menu pull-right" role="menu">
-                            <li><a href="#">Action</a>
-                            </li>
-                            <li><a href="#">Another action</a>
-                            </li>
-                            <li><a href="#">Something else here</a>
-                            </li>
-                            <li class="divider"></li>
-                            <li><a href="#">Separated link</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- /.panel-heading -->
-            <div class="panel-body">
-                <div id="morris-area-chart"></div>
             </div>
             <!-- /.panel-body -->
         </div>

@@ -56,15 +56,12 @@ public class CourseAction extends AbstractAction {
     }
     
     public String edit(){
-        return "edit";
+        course = new Course(2, "tesst", 1990, "remark", Byte.MIN_VALUE, null);
+        return "input";
     }
-    
-    public String update(){
-        return "changefinish";
-    }
-    
+        
     public String add(){
-        return "add";
+        return "input";
     }
     
     public String save(){

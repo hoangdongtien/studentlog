@@ -10,5 +10,12 @@ package com.aprotrain.sl.common.constants.db;
  * @author admin
  */
 public interface Course extends DbConstants{
-
+    public enum Status{
+        DEACTIVE(0), ACTIVE(1);
+        
+        int value;        
+        private Status(int value){
+            this.value = value;
+        }
+    }
 }
