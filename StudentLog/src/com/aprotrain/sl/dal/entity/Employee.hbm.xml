@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 17, 2015 12:45:39 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 18, 2015 3:08:49 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.aprotrain.sl.dal.entity.Employee" table="Employee" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
         <id name="employeeId" type="long">
@@ -32,5 +32,11 @@
         <property name="employeeStatus" type="java.lang.Byte">
             <column name="EmployeeStatus" />
         </property>
+        <set name="facultyDetailses" table="FacultyDetails" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EmployeeId" />
+            </key>
+            <one-to-many class="com.aprotrain.sl.dal.entity.FacultyDetails" />
+        </set>
     </class>
 </hibernate-mapping>

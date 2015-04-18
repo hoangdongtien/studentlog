@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 18, 2015 3:08:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aprotrain.sl.dal.entity.StudentTransferHistory" table="StudentTransferHistory" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
+        <id name="transferId" type="long">
+            <column name="TransferId" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="student" class="com.aprotrain.sl.dal.entity.Student" fetch="select">
+            <column name="StudentId" />
+        </many-to-one>
+        <property name="fromClass" type="java.lang.Long">
+            <column name="FromClass" />
+        </property>
+        <property name="toClass" type="java.lang.Long">
+            <column name="ToClass" />
+        </property>
+        <property name="transferDate" type="serializable">
+            <column name="TransferDate" />
+        </property>
+        <property name="remarks" type="serializable">
+            <column name="Remarks" />
+        </property>
+    </class>
+</hibernate-mapping>

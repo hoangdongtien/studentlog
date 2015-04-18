@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 18, 2015 3:08:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aprotrain.sl.dal.entity.ClassUnit" table="ClassUnit" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
+        <id name="classId" type="long">
+            <column name="ClassId" />
+            <generator class="increment" />
+        </id>
+        <property name="className" type="string">
+            <column name="ClassName" length="10" />
+        </property>
+        <property name="startDate" type="date">
+            <column name="StartDate" />
+        </property>
+        <property name="classStatus" type="string">
+            <column name="ClassStatus" length="10" />
+        </property>
+        <set name="studentsForCurrentClass" table="Student" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CurrentClass" not-null="true" />
+            </key>
+            <one-to-many class="com.aprotrain.sl.dal.entity.Student" />
+        </set>
+        <set name="studentsForInitClass" table="Student" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="InitClass" not-null="true" />
+            </key>
+            <one-to-many class="com.aprotrain.sl.dal.entity.Student" />
+        </set>
+        <set name="classOpenHouses" table="ClassOpenHouse" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="ClassId" not-null="true" />
+            </key>
+            <one-to-many class="com.aprotrain.sl.dal.entity.ClassOpenHouse" />
+        </set>
+    </class>
+</hibernate-mapping>

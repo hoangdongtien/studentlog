@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 18, 2015 3:08:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aprotrain.sl.dal.entity.ExamAttendance" table="ExamAttendance" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
+        <composite-id name="id" class="com.aprotrain.sl.dal.entity.ExamAttendanceId">
+            <key-property name="examId" type="long">
+                <column name="ExamId" />
+            </key-property>
+            <key-property name="studentId" type="long">
+                <column name="StudentId" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="exam" class="com.aprotrain.sl.dal.entity.Exam" update="false" insert="false" fetch="select">
+            <column name="ExamId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="student" class="com.aprotrain.sl.dal.entity.Student" update="false" insert="false" fetch="select">
+            <column name="StudentId" not-null="true" />
+        </many-to-one>
+        <property name="examAttendanceStatus" type="java.lang.Byte">
+            <column name="ExamAttendanceStatus" />
+        </property>
+        <property name="takeTime" type="java.lang.Byte">
+            <column name="TakeTime" />
+        </property>
+        <property name="lab" type="string">
+            <column name="Lab" length="10" />
+        </property>
+        <property name="remarks" type="serializable">
+            <column name="Remarks" />
+        </property>
+        <property name="roomId" type="java.lang.Byte">
+            <column name="RoomId" />
+        </property>
+    </class>
+</hibernate-mapping>

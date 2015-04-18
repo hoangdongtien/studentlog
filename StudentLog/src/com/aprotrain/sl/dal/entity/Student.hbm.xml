@@ -1,24 +1,21 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Apr 17, 2015 12:45:39 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Apr 18, 2015 3:08:49 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="com.aprotrain.sl.dal.entity.Student" table="Student" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
         <id name="studentId" type="long">
             <column name="StudentId" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="course" class="com.aprotrain.sl.dal.entity.Course" fetch="select">
-            <column name="CourseId" />
+        <many-to-one name="classUnitByCurrentClass" class="com.aprotrain.sl.dal.entity.ClassUnit" fetch="select">
+            <column name="CurrentClass" not-null="true" />
+        </many-to-one>
+        <many-to-one name="classUnitByInitClass" class="com.aprotrain.sl.dal.entity.ClassUnit" fetch="select">
+            <column name="InitClass" not-null="true" />
         </many-to-one>
         <property name="rollnumber" type="string">
             <column name="Rollnumber" length="10" not-null="true" />
-        </property>
-        <property name="initClass" type="long">
-            <column name="InitClass" not-null="true" />
-        </property>
-        <property name="currentClass" type="long">
-            <column name="CurrentClass" not-null="true" />
         </property>
         <property name="rollPortal" type="string">
             <column name="RollPortal" length="20" not-null="true" />
@@ -62,6 +59,9 @@
         <property name="image" type="serializable">
             <column name="Image" />
         </property>
+        <property name="courseId" type="java.lang.Long">
+            <column name="CourseId" />
+        </property>
         <property name="upgrade1" type="string">
             <column name="Upgrade1" length="50" />
         </property>
@@ -86,5 +86,23 @@
         <property name="dropoutFillingDate" type="serializable">
             <column name="DropoutFillingDate" />
         </property>
+        <set name="batchStudentLists" table="BatchStudentList" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="StudentId" not-null="true" />
+            </key>
+            <one-to-many class="com.aprotrain.sl.dal.entity.BatchStudentList" />
+        </set>
+        <set name="studentTransferHistories" table="StudentTransferHistory" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="StudentId" />
+            </key>
+            <one-to-many class="com.aprotrain.sl.dal.entity.StudentTransferHistory" />
+        </set>
+        <set name="examAttendances" table="ExamAttendance" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="StudentId" not-null="true" />
+            </key>
+            <one-to-many class="com.aprotrain.sl.dal.entity.ExamAttendance" />
+        </set>
     </class>
 </hibernate-mapping>

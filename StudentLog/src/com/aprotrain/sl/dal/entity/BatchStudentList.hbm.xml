@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Apr 18, 2015 3:08:49 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.aprotrain.sl.dal.entity.BatchStudentList" table="BatchStudentList" schema="dbo" catalog="StudentLog_dev" optimistic-lock="version">
+        <composite-id name="id" class="com.aprotrain.sl.dal.entity.BatchStudentListId">
+            <key-property name="batchId" type="long">
+                <column name="BatchId" />
+            </key-property>
+            <key-property name="studentId" type="long">
+                <column name="StudentId" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="batch" class="com.aprotrain.sl.dal.entity.Batch" update="false" insert="false" fetch="select">
+            <column name="BatchId" not-null="true" />
+        </many-to-one>
+        <many-to-one name="student" class="com.aprotrain.sl.dal.entity.Student" update="false" insert="false" fetch="select">
+            <column name="StudentId" not-null="true" />
+        </many-to-one>
+        <property name="attendanceType" type="java.lang.Byte">
+            <column name="AttendanceType" />
+        </property>
+        <property name="status" type="java.lang.Byte">
+            <column name="Status" />
+        </property>
+        <property name="remarks" type="serializable">
+            <column name="Remarks" />
+        </property>
+        <property name="gpaQ1" type="java.lang.Byte">
+            <column name="GpaQ1" />
+        </property>
+        <property name="gpaQ2" type="java.lang.Byte">
+            <column name="GpaQ2" />
+        </property>
+        <property name="gpaQ3" type="java.lang.Byte">
+            <column name="GpaQ3" />
+        </property>
+        <property name="gpaQ4" type="java.lang.Byte">
+            <column name="GpaQ4" />
+        </property>
+        <property name="gpaQ5" type="java.lang.Byte">
+            <column name="GpaQ5" />
+        </property>
+        <property name="gpaQ6" type="java.lang.Byte">
+            <column name="GpaQ6" />
+        </property>
+        <property name="gpaRemarks" type="serializable">
+            <column name="GpaRemarks" />
+        </property>
+        <set name="batchAttendances" table="BatchAttendance" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="BatchId" not-null="true" />
+                <column name="StudentId" not-null="true" />
+            </key>
+            <one-to-many class="com.aprotrain.sl.dal.entity.BatchAttendance" />
+        </set>
+    </class>
+</hibernate-mapping>
