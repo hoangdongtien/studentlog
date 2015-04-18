@@ -6,11 +6,7 @@
 package com.aprotrain.sl.dal.dao.impl;
 
 import com.aprotrain.sl.dal.common.AbstractDao;
-import com.aprotrain.sl.dal.entity.Course;
 import com.aprotrain.sl.dal.entity.Subject;
-import java.util.List;
-import org.hibernate.Query;
-import org.hibernate.Session;
 
 /**
  *
@@ -18,14 +14,10 @@ import org.hibernate.Session;
  */
 public class SubjectServiceImpl extends AbstractDao<Subject> {
 
-    @Override
-    public List<Subject> listAll() {
-        Session session = openSession();
-        Query query = session.createQuery(" FROM Subject s JOIN s.course ");
-        //http://levelup.lishman.com/hibernate/hql/joins.php     
-        List<Subject> listSub = query.list();
-        session.close();
+    public SubjectServiceImpl() {
+        super();
+        this.setEntityType(Subject.class);
+    }
 
-        return listSub;
-    }  
+
 }

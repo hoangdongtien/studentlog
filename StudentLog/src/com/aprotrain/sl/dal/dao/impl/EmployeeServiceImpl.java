@@ -6,6 +6,7 @@
 package com.aprotrain.sl.dal.dao.impl;
 
 import com.aprotrain.sl.dal.common.AbstractDao;
+import com.aprotrain.sl.dal.entity.Course;
 import com.aprotrain.sl.dal.entity.Employee;
 import java.util.List;
 import org.hibernate.Query;
@@ -18,20 +19,10 @@ import org.hibernate.Session;
 public class EmployeeServiceImpl extends AbstractDao<Employee> {
 
     public EmployeeServiceImpl() {
-
+        super();
+        this.setEntityType(Employee.class);
     }
 
-    @Override
-    public List<Employee> listAll() {
-        Session session = this.getSession();
-
-        Query query = session.createQuery("From Employee");
-        List<Employee> listEmp = query.list();
-
-        session.close();
-        return listEmp;
-    }
-  
     public Employee checkLogin(String internalEmail, String password) {
         Session session = this.getSession();
 
