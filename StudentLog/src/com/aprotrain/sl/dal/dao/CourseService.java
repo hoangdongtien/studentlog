@@ -7,11 +7,12 @@ package com.aprotrain.sl.dal.dao;
 
 import com.aprotrain.sl.dal.common.BaseDao;
 import com.aprotrain.sl.dal.entity.Course;
+import java.util.List;
 
 /**
  *
  * @author Hoang Dong Tien
  */
 public interface CourseService extends BaseDao<Course>{
-    
+    List<Course> search(Course c);    
 }

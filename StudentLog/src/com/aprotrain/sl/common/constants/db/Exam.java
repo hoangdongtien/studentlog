@@ -9,7 +9,7 @@ package com.aprotrain.sl.common.constants.db;
  *
  * @author admin
  */
-public interface Exam extends Constants{
+public interface Exam extends DbConstants{
     public static final String TYPE_PRACTICAL = "P";
     public static final String TYPE_THEORY    = "T";
     public static final String TYPE_HANDOUT   = "H";

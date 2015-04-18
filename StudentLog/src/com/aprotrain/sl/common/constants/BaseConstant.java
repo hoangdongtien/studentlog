@@ -9,6 +9,6 @@ package com.aprotrain.sl.common.constants;
  *
  * @author Tien Hoang D
  */
-public interface Base {
-    
+public interface BaseConstant {
+    public static final String STRING_BLANK = "";
 }

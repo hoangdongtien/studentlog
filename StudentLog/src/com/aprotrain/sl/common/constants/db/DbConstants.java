@@ -5,12 +5,13 @@
  */
 package com.aprotrain.sl.common.constants.db;
 
+import com.aprotrain.sl.common.constants.BaseConstant;
+
 /**
  *
  * @author admin
  */
-public interface Constants {
-
+public interface DbConstants extends BaseConstant { 
     public static final int STATUS_ACTIVED = 1;
     public static final int STATUS_DEACTIVED = 0;
 
@@ -21,8 +22,8 @@ public interface Constants {
     public static final String TIMESLOT_L = "L";
     public static final String TIMESLOT_M = "M";
 
-    public static final Integer SEMETER_1=1;
-    public static final Integer SEMETER_2=2;
-    public static final Integer SEMETER_3=3;
-    public static final Integer SEMETER_4=4;
+    public static final Integer SEMETER_1 = 1;
+    public static final Integer SEMETER_2 = 2;
+    public static final Integer SEMETER_3 = 3;
+    public static final Integer SEMETER_4 = 4;
 }

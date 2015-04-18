@@ -8,7 +8,6 @@ package com.aprotrain.sl.web.dashboard;
 import com.aprotrain.sl.dal.dao.CourseService;
 import com.aprotrain.sl.dal.entity.Course;
 import com.aprotrain.sl.web.common.AbstractAction;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -52,13 +51,23 @@ public class CourseAction extends AbstractAction {
     
 //    action methods
     public String list(){       
-        this.courseList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            Course c = new Course();
-            c.setCourseCode("test" + i);
-            this.courseList.add(c);
-        }
-        
+        this.courseList = this.getCourseService().listAll();      
         return "list";
+    }
+    
+    public String edit(){
+        return "edit";
+    }
+    
+    public String update(){
+        return "changefinish";
+    }
+    
+    public String add(){
+        return "add";
+    }
+    
+    public String save(){
+        return "changefinish";
     }
 }

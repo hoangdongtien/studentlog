@@ -9,7 +9,7 @@ package com.aprotrain.sl.common.constants.db;
  *
  * @author admin
  */
-public interface Batch extends Constants {
+public interface Batch extends DbConstants {
     public static final String PRESENT_P        = "P";
     public static final String PRESENT_PA       = "PA";
     public static final String PRESENT_A        = "A";

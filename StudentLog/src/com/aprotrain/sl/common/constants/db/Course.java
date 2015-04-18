@@ -9,6 +9,6 @@ package com.aprotrain.sl.common.constants.db;
  *
  * @author admin
  */
-public interface Course extends Constants{
+public interface Course extends DbConstants{
 
 }
